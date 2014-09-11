@@ -1,0 +1,133 @@
+%transitionHeader {
+	transition: all .3s ease;
+}
+
+header {
+	height: 60px;
+	background-color: #fff;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	@extend %transitionHeader;
+}
+
+html.toggle-v {
+	header {
+		height: 60px;
+		opacity: .8;
+
+		.pull-left {
+			h2 {
+				@include font-size(2.2);
+				line-height: 1;
+			}
+		}
+
+		.pull-right {
+			.user {
+				.meta {
+					.username {
+						line-height: 4;
+						@include font-size(1.6);
+					}
+				}
+
+				.avatar {
+					img {
+						width: 60px;
+						height: 60px;
+					}
+				}
+			}
+		}
+	}
+}
+
+html.toggle-h {
+	header {
+		padding-left: 100px;
+	}
+}
+
+header {
+	padding-left: 120px;
+
+	@include bp-large() {
+		padding-left: 140px;
+	}
+
+	@include bp-xl() {
+		padding-left: 160px;
+	}
+
+	@include bp-xl-2() {
+		padding-left: 180px;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			margin-bottom: 10px;
+			display: inline-block;
+			margin-top: 20px;
+			margin-right: 10px;
+
+			a {
+				text-transform: uppercase;
+				@include font-size(1.6);
+				color: #fff;
+
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	.pull-left {
+		display: none;
+
+		h2 {
+			@extend %transitionHeader;
+			line-height: 1.3;
+		}
+	}
+
+	.pull-right {
+		height: 60px;
+
+		.user {
+			.meta {
+				float: left;
+
+				.username {
+					margin-right: 20px;
+					line-height: 3.4;
+					@include font-size(1.8);
+					display: none;
+					@extend %transitionHeader;
+
+					@include bp-small-2() {
+						display: block;
+					}
+				}
+			}
+
+			.avatar {
+				float: left;
+				width: 60px;
+
+				img {
+					width: 100%;
+					height: auto;
+					@extend %transitionHeader;
+				}
+			}
+		}
+	}
+
+}
