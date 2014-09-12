@@ -1,0 +1,203 @@
+html.toggle-h {
+	aside {
+		width: 60px;
+
+		ul {
+			transform: translateX(0);
+			width: 160px;
+
+			@include bp-xl() {
+				width: 60px;
+			}
+
+			li {
+				.icon {
+					transform: translateX(5px);
+				}
+
+				a {
+					.icon {
+						margin-left: 5px;
+					}
+
+					h4 {
+						opacity: 1;
+						visibility: visible;
+						transform: translateX(10px);
+
+						@include bp-xl() {
+							opacity: 0;
+							visibility: hidden;
+						}
+					}
+				}
+			}
+		}
+
+		.toggle {
+			// opacity: 0;
+			// visibility: hidden;
+		}
+	}
+}
+
+aside {
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-height: 400px;
+	z-index: 1010;
+	padding: 0 0 20px;
+	// transition: all .3s ease;
+
+	@include bp-small-3() {
+		transform: translateX(0);
+	}
+
+	@include bp-xl() {
+		width: 140px;
+	}
+
+	@include bp-xl-2() {
+		width: 160px;
+	}
+}
+
+aside {
+	.top {
+		width: 120px;
+		transition: all .4s ease;
+		@extend .cf;
+
+		@include bp-small-3() {
+			transform: translateX(-60px);
+		}
+
+		.menu {
+			color: #333;
+			float: left;
+			@include font-size(3);
+			width: 60px;
+			text-align: center;
+			vertical-align: middle;
+			height: 33px;
+			cursor: pointer;
+
+			.svg {
+				margin-top: -2px;
+
+				svg {
+					width: 50px;
+				}
+			}
+		}
+
+		.brand {
+			float: left;
+
+			img {
+				// border-radius: 50%;
+				width: 100%;
+				max-width: 60px;
+				display: inline-block;
+			}
+		}
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		overflow: hidden;
+		width: 60px;
+		background-color: #333;
+		height: inherit;
+		transition: all .4s ease;
+		transform: translateX(-80px);
+
+		@include bp-small-3() {
+			transform: translateX(0px);
+		}
+
+		@include bp-xl() {
+			width: 160px;
+		}
+
+		li {
+			&.active {
+				a {
+					background-color: #eee;
+					color: #000;
+
+					&:hover {
+						background-color: #eee;
+						color: #000;
+					}
+				}
+			}
+
+			a {
+				// width: 100%;
+				display: block;
+				text-transform: uppercase;
+				@include font-size(2);
+				padding: 15px 10px;
+				color: #fff;
+				@extend .cf;
+				overflow: hidden;
+				line-height: .8;
+				transition: all .2s ease;
+
+				&:hover {
+					color: #fff;
+					text-decoration: none;
+					background-color: #000;
+				}
+
+				.icon {
+					float: left;
+					transition: all .3s ease;
+					margin-left: 10px;
+				}
+
+				h4 {
+					@include font-size(1.2);
+					margin: 0;
+					transition: all .3s ease;
+					position: absolute;
+					left: 30px;
+					line-height: 1.8;
+					margin-left: 20px;
+					opacity: 0;
+					visibility: hidden;
+
+					@include bp-xl() {
+						opacity: 1;
+						height: auto;
+						visibility: visible;
+					}
+				}
+			}
+		}
+	}
+
+	.toggle {
+		position: absolute;
+		left: 0;
+		bottom: 40px;
+		padding: 15px;
+		width: 100%;
+		cursor: pointer;
+		text-align: right;
+		transition: all .4s ease;
+
+		&:hover {
+			background-color: #444;
+		}
+
+		i {
+			color: #fff;
+			@include font-size(2);
+		}
+	}
+}
